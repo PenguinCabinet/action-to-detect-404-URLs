@@ -1,0 +1,33 @@
+name: 'action-to-detect-404-URLs'
+description: 'action-to-detect-404-URLs'
+inputs:
+  working_directory:
+    description: 'working directory'
+    required: false
+    default: '.'
+  filter_mode:
+    description: 'filter_mode'
+    required: false
+    default: 'deny'
+  filter_status_code:
+    description: 'Regular expression for the status code to detect'
+    required: false
+    default: '404'
+  detect_URLs_that_cannot_connect_to_the_server:
+    description: 'Whether to detect when the server cannot be connected'
+    required: false
+    default: true
+  wait_time:
+    description: 'Request sending interval(second)'
+    required: false
+    default: 1
+
+runs:
+  using: 'composite'
+  steps:
+    - uses: actions/setup-python@v6
+      with:
+        python-version: '3.13' 
+    - run: pip install -r requirements.txt
+    - run: python ${{ github.action_path }}/main.py
+      working-directory: ${{ inputs.working_directory }}
