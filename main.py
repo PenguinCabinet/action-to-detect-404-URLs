@@ -98,7 +98,7 @@ def main(working_directory: str, filter_mode: str, status_code:str,detect_URLs_t
 
 if __name__ == "__main__":
     main(
-        os.getenv("working_directory"),
+        "./",
         os.getenv("filter_mode"),
         os.getenv("filter_status_code"),
         os.getenv("detect_URLs_that_cannot_connect_to_the_server"),
