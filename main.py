@@ -101,6 +101,6 @@ if __name__ == "__main__":
         "./",
         os.getenv("filter_mode"),
         os.getenv("filter_status_code"),
-        os.getenv("detect_URLs_that_cannot_connect_to_the_server"),
-        os.getenv("wait_time"),
+        bool(os.getenv("detect_URLs_that_cannot_connect_to_the_server")),
+        int(os.getenv("wait_time")),
     )
