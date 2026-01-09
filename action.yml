@@ -29,5 +29,7 @@ runs:
       with:
         python-version: '3.13' 
     - run: pip install -r requirements.txt
+      shell: bash
     - run: python ${{ github.action_path }}/main.py
       working-directory: ${{ inputs.working_directory }}
+      shell: bash
