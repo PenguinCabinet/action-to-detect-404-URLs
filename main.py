@@ -63,7 +63,7 @@ def search_and_filter_urls_directory(working_directory: str, filter_mode: str, s
         )
         time.sleep(wait_time)
     
-    filter_func=lambda a,b:not re.match(b,a) if filter_mode == "allow" else lambda a,b:re.match(b,a)
+    filter_func=lambda a,b:re.match(b,a)==None if filter_mode == "allow" else lambda a,b:re.match(b,a)!=None
 
     detected_urls_with_status = [
         e for e in detected_urls_with_status 
