@@ -34,7 +34,7 @@ def search_urls_directory(dir_name: str) -> set:
     Q.append(dir_name)
     while Q:
         fname = Q.pop()
-        if fname==".git":
+        if os.path.basename(fname)==".git":
             continue
         if os.path.isdir(fname):
             for e in os.listdir(fname):
