@@ -18,7 +18,7 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       - name: test
-        uses: PenguinCabinet/action-to-detect-404-URLs@main
+        uses: PenguinCabinet/action-to-detect-404-URLs@v0.0.2
         with:
           working_directory: "./" # The directory path to check
           filter_mode: "deny" # "allow" mode or "deny" mode
