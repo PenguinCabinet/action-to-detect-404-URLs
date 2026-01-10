@@ -2,11 +2,11 @@ name: 'action-to-detect-404-URLs'
 description: 'action-to-detect-404-URLs'
 inputs:
   working_directory:
-    description: 'working directory'
+    description: 'The directory path to check'
     required: false
     default: '.'
   filter_mode:
-    description: 'filter_mode'
+    description: 'filter_mode("allow" or "deny")'
     required: false
     default: 'deny'
   filter_status_code:
