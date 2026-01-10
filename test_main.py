@@ -13,6 +13,10 @@ class TestMain(unittest.TestCase):
                 "https://example.com",
             ]
         )
+        self.assertEqual(
+            search_urls("mailto:mail@example.com"),
+            []
+        )
 
     def test_search_and_filter_urls_directory(self):
         self.assertEqual(

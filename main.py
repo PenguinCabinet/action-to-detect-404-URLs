@@ -7,7 +7,18 @@ import time
 from linkify_it import LinkifyIt
 
 def search_urls(text: str) -> list[str]:
-    linkify = LinkifyIt(options={"fuzzy_link":False})
+    linkify = LinkifyIt(
+        schemas={
+            "ftp:": None,
+            "//": None,
+            "mailto:": None,
+        },
+        options={
+            "fuzzy_link": False,
+            "fuzzy_email": False,
+            "fuzzy_ip": False,
+        }
+    )
     matches = linkify.match(text)
 
     if not matches:
