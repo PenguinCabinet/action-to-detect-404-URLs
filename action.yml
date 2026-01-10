@@ -1,6 +1,9 @@
 name: 'action-to-detect-404-URLs'
 description: 'action-to-detect-404-URLs'
 author: 'PenguinCabinet'
+branding:
+  icon: 'check'
+  color: 'green'
 inputs:
   working_directory:
     description: 'The directory path to check'
